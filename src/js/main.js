@@ -14,7 +14,7 @@ class ColorExtractorApp {
     this.imageColorExtractor = imageColorExtractor;
     this.colorContainer = document.getElementById("colorContainer");
     this.searchInput = document.getElementById("searchInput");
-    this.searchButton = document.getElementById("searchButton");
+    this.form = document.getElementById("form");
     this.setupListeners();
   }
 
@@ -22,9 +22,9 @@ class ColorExtractorApp {
    * Sets up event listeners for the search button.
    */
   setupListeners() {
-    this.searchButton.addEventListener(
-      "click",
-      this.handleSearchClick.bind(this)
+    this.form.addEventListener(
+      "submit",
+      this.handleSearch.bind(this)
     );
   }
 
@@ -32,7 +32,8 @@ class ColorExtractorApp {
    * Handles the click event on the search button.
    * Triggers color extraction based on the search term entered by the user.
    */
-  async handleSearchClick() {
+  async handleSearch(event) {
+    event.preventDefault();
     const searchTerm = this.searchInput.value.trim();
     this.colorContainer.innerHTML = ""; // Clear previous color blocks
     this.showLoader();
