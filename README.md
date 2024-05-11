@@ -2,6 +2,13 @@
 
 The Color Extractor App is a web application that allows users to search for images related to a keyword and extracts the dominant colors from those images. It utilizes the Bing Image Search API to fetch images and the node-vibrant library to extract colors.
 
+## Technology Used
+- **Webpack** to setup development and build prod ready code.
+- **Scss** and **Bootstrap** for styling
+- **Javascript**
+- **Bing Image Search API** to fetch images
+- **Node-vibrant** library to extract colors.
+
 ## Table of Contents
 
 - [Getting Started](#getting-started)
